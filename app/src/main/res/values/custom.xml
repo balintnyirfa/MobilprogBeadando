@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="custom_background">#B39B82</color>
+    <color name="custom_text">#E1D3C4</color>
+    <color name="custom_text_hint">#82582B</color>
+    <color name="custom_button">#7A5F41</color>
+</resources>

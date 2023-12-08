@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/custom_background"
+    tools:context=".CollectionActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10sp"
+            android:paddingTop="20sp"
+            android:paddingRight="10sp"
+            android:text="THE COLLECTION"
+            android:textAlignment="center"
+            android:textColor="@color/custom_text"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:paddingBottom="20sp"
+            android:text="You can view your collection here!"
+            android:textAlignment="center"
+            android:textColor="@color/custom_text"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/addBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/custom_button"
+                android:text="ADD TO YOUR COLLECTION"
+                android:textColor="@color/custom_text" />
+
+            <Button
+                android:id="@+id/exitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/custom_button"
+                android:text="EXIT"
+                android:textColor="@color/custom_text" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
+    </LinearLayout>
+
+</LinearLayout>

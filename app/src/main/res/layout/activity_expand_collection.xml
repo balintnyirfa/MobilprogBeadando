@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/custom_background"
+    tools:context=".ExpandCollection">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="60dp"
+        android:text="EXPAND YOUR COLLECTION"
+        android:textAlignment="center"
+        android:textColor="@color/custom_text"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="30dp"
+        android:text="Here you can add new items to your existing collection!"
+        android:textAlignment="center"
+        android:textColor="@color/custom_text"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Artist:"
+                android:textColor="@color/custom_text"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/artistText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="e.g Beyoncé"
+                android:inputType="text"
+                android:textColor="@color/custom_text"
+                android:textColorHint="@color/custom_text_hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Title:"
+                android:textColor="@color/custom_text" />
+
+            <EditText
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="e.g RENAISSANCE"
+                android:inputType="text"
+                android:textColor="@color/custom_text"
+                android:textColorHint="@color/custom_text_hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Format:"
+                android:textColor="@color/custom_text" />
+
+            <EditText
+                android:id="@+id/formatText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="e.g CD"
+                android:inputType="text"
+                android:textColor="@color/custom_text"
+                android:textColorHint="@color/custom_text_hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Value:"
+                android:textColor="@color/custom_text" />
+
+            <EditText
+                android:id="@+id/valueNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="Enter a number"
+                android:inputType="number"
+                android:textColor="@color/custom_text"
+                android:textColorHint="@color/custom_text_hint" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addToCollectionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/custom_button"
+            android:gravity="center"
+            android:text="ADD"
+            android:textColor="@color/custom_text" />
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/custom_button"
+            android:text="BACK"
+            android:textColor="@color/custom_text" />
+    </LinearLayout>
+</LinearLayout>
