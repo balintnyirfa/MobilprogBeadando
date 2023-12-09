@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="custom_background">#B39B82</color>
     <color name="custom_text">#E1D3C4</color>
     <color name="custom_text_hint">#82582B</color>
     <color name="custom_button">#7A5F41</color>
+    <color name="custom_colorPrimary">#4C4033</color>
+    <color name="custom_colorPrimaryDark">#332618</color>
+    <color name="custom_colorAccent">#4C4033</color>
+
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/custom_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/custom_colorPrimaryDark</item>
+        <item name="colorAccent">@color/custom_colorAccent</item>
+    </style>
 </resources>
