@@ -28,6 +28,7 @@ public class CollectionOpenHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
             do {
                 collectionArrayList.add(new RecordCollection(
+                   cursor.getInt(0),
                    cursor.getString(1),
                    cursor.getString(2),
                    cursor.getString(3),

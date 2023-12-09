@@ -1,7 +1,8 @@
 package com.example.abjtty;
 
 public class RecordCollection {
-    public RecordCollection(String artist, String title, String format, int value) {
+    public RecordCollection(int id, String artist, String title, String format, int value) {
+        this.id = id;
         this.artist = artist;
         this.title = title;
         this.format = format;

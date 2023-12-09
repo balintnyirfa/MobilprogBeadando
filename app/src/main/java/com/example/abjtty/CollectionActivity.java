@@ -66,26 +66,13 @@ public class CollectionActivity extends AppCompatActivity implements CollectionR
     public void onRecordClick(int position) {
         //DELETE
         db = collectionOpenHelper.getWritableDatabase();
-        /*Cursor cursor = db.query(
-                false,
-                CollectionContract.TABLE_NAME
-                );
-        while (cursor.moveToNext()){
-
-        }*/
-        Toast.makeText(this, String.valueOf(CollectionContract.CollectionEntry._ID), Toast.LENGTH_SHORT).show(); //_id értéket ad vissza ez nem jó megoldás xd
-        long delete = db.delete(CollectionContract.TABLE_NAME, "_id="+ CollectionContract.CollectionEntry._ID, null);
+        //Toast.makeText(this, String.valueOf(collectionArrayList.get(position).getId()), Toast.LENGTH_SHORT).show(); //_id értéket ad vissza ez nem jó megoldás xd
+        long delete = db.delete(CollectionContract.TABLE_NAME, "_id="+ collectionArrayList.get(position).getId() , null);
+        //Toast.makeText(this, String.valueOf(delete), Toast.LENGTH_SHORT).show();
         if (delete != -1) {
             Toast.makeText(this, "ROW DELETED!", Toast.LENGTH_SHORT).show();
             collectionArrayList.remove(position);
         }
-        /*String selection = CollectionContract.CollectionEntry._ID + "=?";
-        String[] selectionArgs = new String[] {  };
-        int deleted = db.delete(
-                CollectionContract.TABLE_NAME,
-                selection,
-                selectionArgs);
-        //Toast.makeText(this, "Deleted: " + deleted, Toast.LENGTH_SHORT).show();*/
         Intent intent = new Intent(CollectionActivity.this, MainActivity.class);
         CollectionActivity.this.startActivity(intent);
     }
