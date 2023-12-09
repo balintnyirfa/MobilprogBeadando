@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class CollectionActivity extends AppCompatActivity {
+public class CollectionActivity extends AppCompatActivity implements CollectionRvAdapter.OnRecordListener {
     //List<RecordCollection> collectionList = new ArrayList<RecordCollection>();
 
     private ArrayList<RecordCollection> collectionArrayList;
@@ -37,7 +37,7 @@ public class CollectionActivity extends AppCompatActivity {
         collectionArrayList = new ArrayList<>();
         collectionOpenHelper = new CollectionOpenHelper(this);
         collectionArrayList = collectionOpenHelper.ReadCollection();
-        collectionRvAdapter = new CollectionRvAdapter(collectionArrayList, CollectionActivity.this);
+        collectionRvAdapter = new CollectionRvAdapter(collectionArrayList, CollectionActivity.this, this);
         collectionRv = findViewById(R.id.listView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(CollectionActivity.this, RecyclerView.VERTICAL, false);
         collectionRv.setLayoutManager(linearLayoutManager);
@@ -59,5 +59,10 @@ public class CollectionActivity extends AppCompatActivity {
                 Toast.makeText(CollectionActivity.this, "You pressed EXIT!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onRecordClick(int position) {
+        Toast.makeText(this, String.valueOf(position), Toast.LENGTH_SHORT).show();
     }
 }
