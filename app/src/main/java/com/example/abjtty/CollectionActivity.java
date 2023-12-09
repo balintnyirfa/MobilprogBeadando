@@ -4,22 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.provider.BaseColumns;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class CollectionActivity extends AppCompatActivity implements CollectionRvAdapter.OnRecordListener {
     //List<RecordCollection> collectionList = new ArrayList<RecordCollection>();
@@ -38,7 +33,7 @@ public class CollectionActivity extends AppCompatActivity implements CollectionR
         collectionArrayList = new ArrayList<>();
         collectionOpenHelper = new CollectionOpenHelper(this);
         collectionArrayList = collectionOpenHelper.ReadCollection();
-        collectionRvAdapter = new CollectionRvAdapter(collectionArrayList, CollectionActivity.this, this);
+        collectionRvAdapter = new CollectionRvAdapter(collectionArrayList, (Context) CollectionActivity.this, (CollectionRvAdapter.OnRecordListener) this);
         collectionRv = findViewById(R.id.listView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(CollectionActivity.this, RecyclerView.VERTICAL, false);
         collectionRv.setLayoutManager(linearLayoutManager);
@@ -53,11 +48,30 @@ public class CollectionActivity extends AppCompatActivity implements CollectionR
             }
         });
 
-        Button exitButton = findViewById(R.id.exitBtn);
-        exitButton.setOnClickListener(new View.OnClickListener() {
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button updateBtn = findViewById(R.id.updateBtn);
+        updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CollectionActivity.this, "You pressed EXIT!", Toast.LENGTH_SHORT).show();
+                //Update
+                db = collectionOpenHelper.getWritableDatabase();
+                String newArtist = "NYIRFA BALINT";
+                String newTitle = "MOBILPROG";
+                String newFormat = "ABJTTY";
+                int newValue = 5;
+                ContentValues values = new ContentValues();
+                values.put(CollectionContract.CollectionEntry.COLUMN_NAME_ARTIST, newArtist);
+                values.put(CollectionContract.CollectionEntry.COLUMN_NAME_TITLE, newTitle);
+                values.put(CollectionContract.CollectionEntry.COLUMN_NAME_FORMAT, newFormat);
+                values.put(CollectionContract.CollectionEntry.COLUMN_NAME_VALUE, newValue);
+
+                String selection = CollectionContract.CollectionEntry._ID + " LIKE ? ";
+                String[] selectionArgs = new String[]{ String.valueOf(collectionArrayList.size()) };
+
+                int updated = db.update(
+                        CollectionContract.TABLE_NAME,
+                        values,
+                        selection,
+                        selectionArgs);
             }
         });
     }
