@@ -72,6 +72,9 @@ public class CollectionActivity extends AppCompatActivity implements CollectionR
                         values,
                         selection,
                         selectionArgs);
+                Toast.makeText(CollectionActivity.this, "ROW UPDATED!", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(getIntent());
             }
         });
     }
