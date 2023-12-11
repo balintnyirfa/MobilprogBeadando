@@ -24,5 +24,19 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(intent);
             }
         });
+
+        Button openWebsiteBtn = findViewById(R.id.openWebsiteBtn);
+        openWebsiteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWebsiteOnClick();
+            }
+        });
+    }
+
+    public void openWebsiteOnClick() {
+        Uri url = Uri.parse("https://discogs.com");
+        Intent intent = new Intent(Intent.ACTION_VIEW, url);
+        MainActivity.this.startActivity(intent);
     }
 }
